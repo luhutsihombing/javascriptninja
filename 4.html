@@ -1,0 +1,32 @@
+<html>
+<body>
+<script>
+
+var valx = 60;
+var GetVal = new Promise(
+    function (resolve, reject) {
+        if (valx>50 && valx<100) {
+            var result = true;
+            resolve(result);
+        } else {
+            var reason = new Error('not between');
+            reject(reason);
+        }
+
+    }
+);
+
+var askQ = function () {
+    GetVal
+        .then(function (fulfilled) {            
+            console.log(fulfilled);
+        })
+        .catch(function (error) {
+            console.log(error.message);         
+        });
+};
+askQ();
+	
+</script>
+</body>
+</html>

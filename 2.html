@@ -1,0 +1,32 @@
+<html>
+<body>
+<script>
+function palindrome(text) 
+	{
+		var Res1 = new Array();
+		var Res2 = new Array();
+		for (i = 0; i < text.length; i++) 
+		{  
+    			Res1[i] = text.substr(i, 1); 		
+		} 
+
+		j=0;
+	for (k = (text.length-1); k>=0; k--) 
+		{  
+    			Res2[j] = text.substr(k, 1); 	
+    			j=j+1;	
+		}		
+		
+		if(JSON.stringify(Res1)==JSON.stringify(Res2)){
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+ document.write(palindrome("nababan"));
+
+</script>
+</body>
+</html>
+
